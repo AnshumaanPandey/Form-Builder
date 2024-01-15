@@ -1,0 +1,88 @@
+.formViewer_component{
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.formViewer_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items : center;
+    font-size: large;
+    font-weight: bold;
+    gap: 10px;
+}
+
+.field_grid_items input,select,option,textarea{
+    padding: 5px 10px;
+    font-size: 16px; 
+    border: none;
+    outline: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.formViewer_grid{
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    justify-content: center;
+    align-content: center;
+    column-gap: 60px;
+    row-gap: 15px;
+}
+
+.field_grid_items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.grid_box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item_btn{
+    padding: 7px 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-weight: 400;
+    background-color: #e2e8f0;
+}
+
+.item_btn:hover{
+    background-color: #cbd5e1;
+}
+
+
+@media only screen and (max-width: 990px) {
+  .formViewer_container {
+    width: 700px;
+    margin: auto;
+  }
+}
+
+
+
+@media only screen and (max-width: 760px) {
+  .formViewer_container {
+    width: 400px;
+    margin: auto;
+  }
+
+  .formViewer_grid{
+    grid-template-columns: repeat(1, 300px);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .formViewer_container {
+    width: 260px;
+    margin: auto;
+  }
+  .formViewer_grid{
+    grid-template-columns: repeat(1, 250px);
+  }
+}

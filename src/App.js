@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+
 import './App.css';
+import FormGenerator from './components/FormGenerator/FormGenerator';
+import FormViewer from './components/FormViewer/FormViewer';
+import ShowJson from './components/ShowJson/ShowJson';
+import { useSelector } from 'react-redux';
 
 function App() {
+
+  const generatedFields = useSelector(state => state.fields)
+  console.log("fields", generatedFields)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className='form_container'>
+        <div className='form_box'>
+          <FormGenerator />
+        </div>
+        <div className='json_box' style={{overflow:"auto"}}>
+          <ShowJson jsonFields={generatedFields} />
+        </div>
+      </div>
+      <FormViewer />
     </div>
   );
 }
