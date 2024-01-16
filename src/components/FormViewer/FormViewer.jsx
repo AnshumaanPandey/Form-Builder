@@ -125,8 +125,8 @@ function FormViewer() {
                                             <button className='item_btn' onClick={() => dispatch(REMOVE_FIELDS(field.id))}>Remove</button>
                                         </div>
                                         <input type={field.type} required={field.required || field.minLength ? true : false}
-                                            min={field.min ? field.min.toString() : undefined}
-                                            max={field.max ? field.max.toString() : undefined}
+                                            min={field.minLength ? field.minLength.toString() : undefined}
+                                            max={field.maxLength ? field.maxLength.toString() : undefined}
                                             onChange={(e) => handleInputChange(field, e.target.value)}
                                             onBlur={(e) => validateInput(field, e.target.value)}
                                             value={formData[field.name]}
@@ -144,8 +144,8 @@ function FormViewer() {
                                         </div>
 
                                         <textarea required={field.required || field.minLength ? true : false}
-                                            min={field.min ? field.min.toString() : undefined}
-                                            max={field.max ? field.max.toString() : undefined}
+                                            min={field.minLength ? field.minLength.toString() : undefined}
+                                            max={field.maxLength ? field.maxLength.toString() : undefined}
                                             value={formData[field.name]}
                                         />
                                         {error[field.name] && <span style={{ color: "red", fontSize: "12px" }}>{error[field.name]}</span>}

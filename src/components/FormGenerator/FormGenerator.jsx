@@ -12,8 +12,7 @@ function FormGenerator() {
         type: "",
         options: [],
         required: false,
-        min: "",
-        max: "",
+        minLength: "",
         maxLength: "",
         pattern: ""
     })
